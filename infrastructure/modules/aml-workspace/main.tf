@@ -21,7 +21,7 @@ resource "azurerm_machine_learning_workspace" "mlw" {
 resource "azurerm_machine_learning_compute_cluster" "adl_aml_ws_compute_cluster" {
   name                          = "cpu-cluster"
   location                      = var.location
-#   vm_priority                   = "LowPriority"
+  vm_priority                   = "Dedicated"
   vm_size                       = "STANDARD_DS11_V2"
   machine_learning_workspace_id = azurerm_machine_learning_workspace.mlw.id
   count                         = var.enable_aml_computecluster ? 1 : 0
