@@ -53,7 +53,7 @@ stages:
           size: Standard_DS3_v2
           min_instances: 0
           max_instances: 4
-          cluster_tier: LowPriority
+          cluster_tier: Dedicated
       - template: templates/${{ variables.version }}/run-pipeline.yml@mlops-templates
         parameters: 
           pipeline_file: mlops/azureml/train/pipeline.yml
